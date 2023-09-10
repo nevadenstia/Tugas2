@@ -4,7 +4,10 @@ from django.shortcuts import render
 
 def show_main(request):
     context = {
-        'name': 'Tupperware',
+        'name' : 'Neva Denstia Shabira',
+        'npm' : '2206083073',
+        'kelas' : 'PBP B',
+        'item_name': 'Tupperware',
         'amount': 2,
         'description' : 'Tupperware membawa Anda solusi penyimpanan terbaik yang \
         telah dipercaya oleh jutaan orang di seluruh dunia. Produk-produk Tupperware \

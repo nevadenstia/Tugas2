@@ -29,12 +29,13 @@ Lakukan git add, git commit, dan git push lalu buka Adaptable dan tunggu deploym
 
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+![Bagan Keterkaitan](https://github.com/nevadenstia/Tugas2/assets/125188477/eb4cbe12-3f17-4bb8-9c53-aa3b999ac05f)
+
 
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
 Kita menggunakan virtual environment untuk mengisolasi dependensi proyek Django dari lingkungan Python global. Ini memungkinkan pengembang untuk mengelola paket Python secara terpisah untuk setiap proyek, menghindari konflik dan masalah kompatibilitas. Walau begitu, tetap memungkinkan untuk membuat aplikasi web berbasis Django tanpa venvn, namun hal tersebut tidak begitu dianjurkan.
-
 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 - MVC (Model-View-Controller) : Dimana Model menjadi representasi dari data dalam aplikasi, sementara View mengatur tampilan dari data Model, dan Controller yang mengurus permintaan pengguna dan sebagai penyambung untuk mengarahkan ke Model atau View.

@@ -31,7 +31,10 @@ Lakukan git add, git commit, dan git push lalu buka Adaptable dan tunggu deploym
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 ![Bagan Keterkaitan](https://github.com/nevadenstia/Tugas2/assets/125188477/eb4cbe12-3f17-4bb8-9c53-aa3b999ac05f)
 
-
+Berkas `urls.py` berperan dalam menentukan tampilan yang akan ditampilkan berdasarkan permintaan (request) dari pengguna.
+`models.py` berfungsi sebagai perantara antara database dan tampilan saat data sedang diproses.
+Pada `views.py`, terdapat fungsi-fungsi yang digunakan untuk menerapkan logika bisnis, dengan bantuan dari model dan template.
+Sementara itu, berkas-berkas HTML digunakan untuk menampilkan data yang telah ada.
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 

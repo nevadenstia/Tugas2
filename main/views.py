@@ -14,7 +14,7 @@ def show_main(request):
         tidak hanya tentang wadah plastik biasa; mereka adalah investasi dalam kualitas hidup Anda. \
         Kami menghadirkan produk berkualitas tinggi yang dirancang khusus untuk menjaga makanan tetap segar, \
         bebas dari bau atau rasa plastik, dan dengan penutup yang kedap udara.',
-        'rating': '5/10',
+        'rating': '8/10',
         'reviews' : 'baik dan pengiriman cepat'
     }
 

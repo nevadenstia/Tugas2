@@ -45,6 +45,6 @@ Kita menggunakan virtual environment untuk mengisolasi dependensi proyek Django 
 
 - MVT (Model-View-Template) : Sama seperti MVC, Model dan View disini juga memiliki fungsi yang serupa dengan MVC, yaitu sebagai representasi data dan tampilan untuk pengguna. Sementara Template berguna untuk menyimpan HTML yang akan ditampilkan apda browser dan menyambungkan kedua model dan View.
 
--MVVM (Model-View-ViewModel) : Sama seperti MVT dan MVC, Model dan View juga digunakan untuk representasi data dan tampilan pengguna. Berbedanya dalam ViewModel, dimana ViewModel digunakan untuk menyediakan interface antara model dan view yang memisahkan keduanya.
+- MVVM (Model-View-ViewModel) : Sama seperti MVT dan MVC, Model dan View juga digunakan untuk representasi data dan tampilan pengguna. Berbedanya dalam ViewModel, dimana ViewModel digunakan untuk menyediakan interface antara model dan view yang memisahkan keduanya.
 
 Perbedaan utama adalah bagaimana komponen-komponen ini berinteraksi dan memisahkan tanggung jawab dalam aplikasi. MVC adalah arsitektur umum yang digunakan dalam pengembangan web, sedangkan MVT adalah konsep yang spesifik untuk Django, dan MVVM sering digunakan dalam pengembangan aplikasi berbasis klien.

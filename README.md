@@ -1,7 +1,7 @@
-**README TUGAS 3
+**README TUGAS 3**
 
-Pertanyaan
-1. Apa perbedaan antara form POST dan form GET dalam Django?**
+**Pertanyaan**
+**1. Apa perbedaan antara form POST dan form GET dalam Django?**
 - Metode POST Django
 Digunakan untuk mengirim data ke server untuk diproses yang dapat di akses dengan request.POST. Data dari form dikirim jadi body request maka tidak ditampilkan dalam bentuk URL. Dalam Tugas 3, metode POST digunakan saat menginput data dalam create_product.html serta diproses dalam fungsi create_product menggunakan parameter request.
 - Metode GET Django
@@ -63,13 +63,13 @@ screenshot /json by id:
 
 ########################################################################################################
 
-**README TUGAS 2
+**README TUGAS 2**
 
 Tautan aplikasi Adaptable 	: https://tugas2.adaptable.app/
 Tautan Repositori GitHub 	: https://github.com/nevadenstia/Tugas2.git
 
-Pertanyaan
-1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+**Pertanyaan**
+**1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 
 STEP 1: Membuat sebuah proyek Django baru
 1. Membuat repo public GitHub dan folder baru dengan nama 'Tugas2'

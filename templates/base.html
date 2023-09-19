@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-left: 20px;
+        }
+
+        h5 {
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left: 40px;
+        }
+
+        h4 {
+        text-align: center;
+        }
+
+
+        /* Center-align and add padding for item details */
+        .item-details {
+            text-align: center;
+            margin-left: 0;
+        }
+
+        .item-details h5 {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        .item-details p {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        .center-image {
+            max-width: 100px; /* Adjust the maximum width as needed */
+            max-height: 100px; /* Adjust the maximum height as needed */
+            width: auto;
+            height: 100px;
+            display: block; /* This ensures the image is centered horizontally */
+            margin: 0 auto; /* This centers the image horizontally */
+        }
+
+        /* Align and style the images and choose boxes */
+        .image-choose-container {
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+            border: 1px solid #ccc; /* Add a border to create the boxes */
+            padding: 10px; /* Add padding inside the boxes */
+        }
+
+
+        .image-container img {
+            max-width: 100%; /* Adjust the image size to fit the box */
+            height: auto;
+        }
+
+        .choose-box {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 5px; /* Adjust the padding for the choose box */
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .new-boxes-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px; /* Adjust the maximum width */
+            margin: 0 auto;
+        }
+
+        .left-box {
+            flex: 0.5; /* Reduce the flex value to make it smaller */
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .right-box {
+            flex: 0.5; /* Reduce the flex value to make it smaller */
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .left-box img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

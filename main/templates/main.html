@@ -1,112 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+{% extends "base.html" %}
 
-        h1 {
-            text-align: center;
-        }
-
-        h3 {
-            margin-left: 20px;
-        }
-
-        h5 {
-            margin-left: 20px;
-        }
-
-        p {
-            margin-left: 40px;
-        }
-
-        /* Center-align and add padding for item details */
-        .item-details {
-            text-align: center;
-            margin-left: 0;
-        }
-
-        .item-details h5 {
-            margin-left: 0;
-            padding-left: 20px;
-        }
-
-        .item-details p {
-            margin-left: 0;
-            padding-left: 20px;
-        }
-
-        .center-image {
-            text-align: center;
-        }
-
-        .center-image img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Align and style the images and choose boxes */
-        .image-choose-container {
-            display: flex;
-            align-items: center;
-            margin: 20px auto;
-        }
-
-        .image-container {
-            flex: 1;
-            text-align: center;
-            border: 1px solid #ccc; /* Add a border to create the boxes */
-            padding: 10px; /* Add padding inside the boxes */
-        }
-
-        /* Make the image smaller and fit inside the box */
-        .image-container img {
-            max-width: 100%; /* Adjust the image size to fit the box */
-            height: auto;
-        }
-
-        .choose-box {
-            text-align: center;
-            background-color: #f2f2f2;
-            padding: 5px; /* Adjust the padding for the choose box */
-        }
-        .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.new-boxes-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
-}
-
-.left-box {
-    flex: 1;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.right-box {
-    flex: 1;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.left-box img {
-    max-width: 100%;
-    height: auto;
-}
-
-    </style>
-</head>
-<body>
-    <h1>Tupperware</h1>
+{% block content %}
+    <h1>Neva's Online Shop</h1>
     <h3>Nama: {{ name }}</h3>
     <h3>NPM: {{ npm }}</h3>
     <h3>Kelas: {{ kelas }}</h3>
@@ -114,7 +9,7 @@
     <div class="image-choose-container">
         <div class="image-container">
             <div class="center-image">
-                <img src="img/newimg.jpg" alt="Image 1">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Gaming-Headset-PNG-HD-Image-1.png" alt="Image 1">
             </div>
         </div>
         <div class="image-container">
@@ -127,7 +22,7 @@
     <div class="image-choose-container">
         <div class="image-container">
             <div class="center-image">
-                <img src="img/boxes.jpg" alt="Image 2">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.A_W0DdcxiFyDC1iPhMbIHAHaFM&pid=Api&P=0&h=180" alt="Image 2">
             </div>
         </div>
         <div class="image-container">
@@ -140,7 +35,7 @@
     <div class="image-choose-container">
         <div class="image-container">
             <div class="center-image">
-                <img src="img/bottles.jpg" alt="Image 3">
+                <img src="https://assetscdn.paytm.com/images/catalog/product/L/LA/LAPASUS-ROG-GL5ICON282531929FFDA/160x0/6.jpg?imwidth=160" alt="Image 3">
             </div>
         </div>
         <div class="image-container">
@@ -149,31 +44,53 @@
             </div>
         </div>
     </div>
-
-    <div class="clearfix"></div>
-    <h2> Our Product Best Seller !</h2>
+    <h1> List of Products !</h1>
+    <h4> Total Stock : {{ total_stock }}</h4>
+    {% for product in products %}
     <div class="new-boxes-container">
         <div class="left-box">
-            <div class="center-image">
-                <img src="img/bestseller.jpg" alt="New Image">
+            <div class="left-box i">
+                {% if product.image %}
+                    <img src="{{ product.image }}" alt="New Image">
+                {% else %}
+                    <P> No Image Available </P>
+                {% endif %}
             </div>
         </div>
         <div class="right-box">
             <div class="item-details">
-                <h5>Item Name:</h5>
-                <p>{{ item_name }}</p>
-                <h5>Amount:</h5>
-                <p>{{ amount }}</p>
-                <h5>Description:</h5>
-                <p>{{ description }}</p>
-                <h5>Rating:</h5>
-                <p>{{ rating }}</p>
-                <h5>Reviews:</h5>
-                <p>{{ reviews }}</p>
+                <div class="item-detail">
+                    <h5>Item Name:</h5>
+                    <p>{{ product.item_name }}</p>
+                </div>
+                <div class="item-detail">
+                    <h5>Available Stock:</h5>
+                    <p>{{ product.amount }}</p>
+                </div>
+                <div class="item-detail">
+                    <h5>Description:</h5>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="item-detail">
+                    <h5>Rating:</h5>
+                    <p>{{ product.rating }}</p>
+                </div>
+                <div class="item-detail">
+                    <h5>Reviews:</h5>
+                    <p>{{ product.reviews }}</p>
+                </div>
             </div>
         </div>
     </div>
-    
+    {% endfor %}
+
+
+    <div style="text-align: center; padding: 20px;">
+        <a href="{% url 'main:create_product' %}">
+            <button>
+                Add New Product
+            </button>
+        </a>
     </div>
-</body>
-</html>
+
+{% endblock content %}

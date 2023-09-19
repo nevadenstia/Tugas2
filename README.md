@@ -1,20 +1,21 @@
-README TUGAS 3
+**README TUGAS 3
 
-1. Apa perbedaan antara form POST dan form GET dalam Django?
+Pertanyaan
+1. Apa perbedaan antara form POST dan form GET dalam Django?**
 - Metode POST Django
 Digunakan untuk mengirim data ke server untuk diproses yang dapat di akses dengan request.POST. Data dari form dikirim jadi body request maka tidak ditampilkan dalam bentuk URL. Dalam Tugas 3, metode POST digunakan saat menginput data dalam create_product.html serta diproses dalam fungsi create_product menggunakan parameter request.
 - Metode GET Django
 Digunakan untuk mengirim data kepada server untuk permintaan data. Data yang dikirim melalui metode GET ditampilkan di URL sebagai query parameters. Karena terbatas pada URL maka data dengan metode GET tidak dianjurkan merupakan data sensitif atau data besar.
 
-2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+**2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?**
 - XML (eXtensible Markup Language): Digunakan untuk mendefinisikan struktur data yang dapat di-customize. Biasanya digunakan dalam berbagai aplikasi untuk pertukaran data, tetapi memiliki format yang verbose dan kompleks.
 - JSON (JavaScript Object Notation): Format yang ringkas dan mudah dibaca yang digunakan untuk pertukaran data antara aplikasi. Digunakan secara luas dalam pengembangan web modern karena ringan, cepat, dan mudah diinterpretasikan oleh bahasa pemrograman.
 - HTML (Hypertext Markup Language): Bahasa markah yang digunakan untuk membuat struktur dan tampilan halaman web. Biasanya digunakan untuk menampilkan konten dan tata letak pada browser web. Pada Tugas 3 ini, HTML banyak digunakan terutama dalam pemindahan data add new product pada halaman main.
 
-3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+**3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?**
 JSON adalah format data yang ringkas, mudah dibaca, dan mudah diinterpretasikan oleh bahasa pemrograman. JSON mendukung tipe data kompleks seperti objek dan array, yang berguna untuk merepresentasikan data yang rumit. JSON dapat digunakan dengan berbagai bahasa pemrograman, menjadikannya pilihan yang serbaguna untuk pertukaran data antara berbagai teknologi. JSON biasanya lebih efisien dalam hal ukuran data daripada XML, sehingga mengurangi penggunaan bandwidth.
 
-4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+**4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 
 	Step 1: Membuat input form untuk menambahkan objek model pada app sebelumnya.
 	- Buat kerangka web base.html pada templates di root folder
@@ -40,7 +41,7 @@ JSON adalah format data yang ringkas, mudah dibaca, dan mudah diinterpretasikan 
 	- open virtual environment
 	- run python manage.py runserver
   
-5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+**5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.**
 
 screenshot /create-product :
 ![Screenshot (720)](https://github.com/nevadenstia/Tugas2/assets/125188477/0db916cb-2a60-43b5-ac84-d66f3141ebe0)
@@ -62,13 +63,13 @@ screenshot /json by id:
 
 ########################################################################################################
 
-README TUGAS 2
+**README TUGAS 2
 
 Tautan aplikasi Adaptable 	: https://tugas2.adaptable.app/
 Tautan Repositori GitHub 	: https://github.com/nevadenstia/Tugas2.git
 
 Pertanyaan
-1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 
 STEP 1: Membuat sebuah proyek Django baru
 1. Membuat repo public GitHub dan folder baru dengan nama 'Tugas2'
@@ -94,7 +95,7 @@ STEP 5: Melakukan deployment di Adaptable
 Lakukan git add, git commit, dan git push lalu buka Adaptable dan tunggu deployment selesai.
 
 
-2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+**2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.**
 ![Bagan Keterkaitan](https://github.com/nevadenstia/Tugas2/assets/125188477/eb4cbe12-3f17-4bb8-9c53-aa3b999ac05f)
 
 Berkas `urls.py` berperan dalam menentukan tampilan yang akan ditampilkan berdasarkan permintaan (request) dari pengguna.
@@ -102,11 +103,11 @@ Berkas `urls.py` berperan dalam menentukan tampilan yang akan ditampilkan berdas
 Pada `views.py`, terdapat fungsi-fungsi yang digunakan untuk menerapkan logika bisnis, dengan bantuan dari model dan template.
 Sementara itu, berkas-berkas HTML digunakan untuk menampilkan data yang telah ada.
 
-3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+**3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?**
 
 Kita menggunakan virtual environment untuk mengisolasi dependensi proyek Django dari lingkungan Python global. Ini memungkinkan pengembang untuk mengelola paket Python secara terpisah untuk setiap proyek, menghindari konflik dan masalah kompatibilitas. Walau begitu, tetap memungkinkan untuk membuat aplikasi web berbasis Django tanpa venvn, namun hal tersebut tidak begitu dianjurkan.
 
-4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+**4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.**
 - MVC (Model-View-Controller) : Dimana Model menjadi representasi dari data dalam aplikasi, sementara View mengatur tampilan dari data Model, dan Controller yang mengurus permintaan pengguna dan sebagai penyambung untuk mengarahkan ke Model atau View.
 
 - MVT (Model-View-Template) : Sama seperti MVC, Model dan View disini juga memiliki fungsi yang serupa dengan MVC, yaitu sebagai representasi data dan tampilan untuk pengguna. Sementara Template berguna untuk menyimpan HTML yang akan ditampilkan apda browser dan menyambungkan kedua model dan View.

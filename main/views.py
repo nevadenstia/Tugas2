@@ -5,6 +5,7 @@ from django.urls import reverse
 from main.models import Product
 from django.http import HttpResponse
 from django.core import serializers
+from django.db.models import Sum
 
 
 # Create your views here.

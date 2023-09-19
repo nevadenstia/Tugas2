@@ -22,9 +22,11 @@ Step 1: Membuat input form untuk menambahkan objek model pada app sebelumnya.
 - Buat main.html dan create_product.html dengan kerangka base.html
 - Modifikasi models.py menjadi 2 class Main dan class Product
 - Buat forms.py dalam main dengan model Product dan fields yang mau diisi
+- Tambahkan button add new product di main.html dan buat loop for product in products
+- Modifikasi di show_main pada views.py dengan menambahkan products = Product.object.all() yang kemudian merubah context dengan isi 'products' = product.
+- Tambahkan total_stock dengan menggunakan models.Sum antara 'amount' dan 'total_stock' pada show_main untuk mentotalkan stock
 - Buat create_product pada views.py yang memanggil ProductForm dari forms.py dengan parameter (request.POST)
 - Modifikasi urls.py dalam main dengan adanya create-product yang memanggil fungsi create_product
-- Membuat
 - open virtual environment
 - run python manage.py makemigrations dan migrate karena ada perubahan dalam models
 - run python manage.py runserver
@@ -35,8 +37,12 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
 - modifikasi urls.py dengan menambahkan path setiap fungsi ("xml/", "json", "xml/<int:id>/", "json/<int:id>/") dan pastikan import main.views
 - open virtual environment
 - run python manage.py runserver
+  
+5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 
-###########################################################################################
+
+  
+########################################################################################################
 
 README TUGAS 2
 

@@ -30,9 +30,11 @@ Step 1: Membuat input form untuk menambahkan objek model pada app sebelumnya.
 - open virtual environment
 - run python manage.py makemigrations dan migrate karena ada perubahan dalam models
 - run python manage.py runserver
+  
 Step 2: Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
 - add import HttpResponse dan serializers
 - tambahkan show_xml, show_json, show_xml_by_id, show_json_by_id pada views.py
+  
 Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
 - modifikasi urls.py dengan menambahkan path setiap fungsi ("xml/", "json", "xml/<int:id>/", "json/<int:id>/") dan pastikan import main.views
 - open virtual environment

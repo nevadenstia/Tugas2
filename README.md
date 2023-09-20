@@ -43,25 +43,25 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
   
 **5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.**
 
-screenshot / :
+- screenshot / :
 ![Screenshot (721)](https://github.com/nevadenstia/Tugas2/assets/125188477/edd54d09-297e-4a66-9031-bb0ac5e942d7)
 
-screenshot /create-product :
+- screenshot /create-product :
 ![Screenshot (720)](https://github.com/nevadenstia/Tugas2/assets/125188477/0db916cb-2a60-43b5-ac84-d66f3141ebe0)
 
-screenshot /main :
+- screenshot /main :
 ![Screenshot (715)](https://github.com/nevadenstia/Tugas2/assets/125188477/b6ae302d-165c-4cfd-9a2d-17c87019d7b2)
 
-screenshot /xml :
+- screenshot /xml :
 ![Screenshot (716)](https://github.com/nevadenstia/Tugas2/assets/125188477/9fd7089d-33e9-4dc6-9472-8558988dfd33)
 
-screenshot /xml by id :
+- screenshot /xml by id :
 ![Screenshot (717)](https://github.com/nevadenstia/Tugas2/assets/125188477/1e0c46df-3100-4db8-941b-65cd3aad217a)
 
-screenshot /json :
+- screenshot /json :
 ![Screenshot (718)](https://github.com/nevadenstia/Tugas2/assets/125188477/683af63a-96a9-4602-a5ed-9db575b63636)
 
-screenshot /json by id:
+- screenshot /json by id:
 ![Screenshot (719)](https://github.com/nevadenstia/Tugas2/assets/125188477/2e9711c9-143f-4096-b8bd-1a49be8da09f)
 
 ########################################################################################################

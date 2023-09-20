@@ -42,6 +42,7 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
 - run python manage.py runserver
   
 **5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.**
+
 screenshot / :
 ![Screenshot (721)](https://github.com/nevadenstia/Tugas2/assets/125188477/edd54d09-297e-4a66-9031-bb0ac5e942d7)
 

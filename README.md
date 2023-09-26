@@ -1,3 +1,32 @@
+**README TUGAS 4**
+
+**Pertanyaan**
+**1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
+Django UserCreationForm adalah salah satu formulir bawaan yang disediakan oleh Django untuk mempermudah pembuatan dan registrasi pengguna dalam aplikasi web. Form ini menyediakan fitur seperti validasi kata sandi, konfirmasi kata sandi, dan validasi email. Kelebihannya adalah menyederhanakan proses pembuatan pengguna, mengurangi kode yang perlu ditulis, dan memastikan data pengguna dibuat dengan benar. Kekurangannya adalah kurangnya fleksibilitas untuk kasus khusus, dan perlu penyesuaian jika Anda memerlukan fitur tambahan.
+
+**2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
+Autentikasi adalah proses memverifikasi identitas pengguna (misalnya, memeriksa apakah pengguna telah log masuk), sementara otorisasi adalah proses memberikan atau menolak akses pengguna ke sumber daya tertentu setelah mereka diautentikasi. Keduanya penting dalam Django dan aplikasi web secara umum, karena autentikasi memastikan hanya pengguna yang sah yang memiliki akses ke sistem, sementara otorisasi mengendalikan apa yang dapat dilakukan pengguna setelah diautentikasi, melindungi data sensitif dan sumber daya lainnya.
+
+**3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?**
+Cookies dalam konteks aplikasi web adalah data kecil yang disimpan di sisi klien (biasanya dalam browser) dan digunakan untuk menyimpan informasi sesi pengguna, seperti ID sesi atau preferensi. Django menggunakan cookies untuk mengelola data sesi pengguna dengan menyediakan penggunaan modul seperti django.contrib.sessions. Ini memungkinkan server untuk mengenali pengguna dan menjaga sesi mereka secara konsisten selama navigasi di situs web.
+
+**4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
+Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cookies dapat menjadi rentan jika tidak diatur dengan benar. Risiko potensial termasuk peretasan sesi (session hijacking), di mana penyerang mencuri cookie sesi pengguna untuk mengakses akun mereka. Untuk mengurangi risiko ini, Anda harus mengimplementasikan tindakan keamanan seperti HTTPS untuk melindungi data selama transit dan menggunakan praktik terbaik dalam manajemen sesi, seperti menghindari menyimpan data sensitif dalam cookies dan mengatur atribut seperti Secure dan HttpOnly untuk meningkatkan keamanan cookies.
+
+**5.Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). **
+1. Membuat fungsi register, login_user, dan logout_user pada main.views yang tetap menggunakan style css dari base.html
+2. Membuat urls dengan /register, /login, dan /logout pada main.urls
+3. Menambahkan register.html dan login.html pada main/templates
+4. retriksi fungsi show_main dengan @login_required
+5. Menambahkan pada login_user response.set_cookie untuk login data menggunakan cookie.
+6. Tambahkan pada context di show_main last_login yang request.COOKIES
+7. edit logout_user dengan response.delete_cookie supaya menghapus cookie
+8. Menambahkan user = models.ForeignKey untuk menghubungkan model Product dengan User
+9. Karena name pada setiap kali login akan diisi oleh nama user, maka name pada models Main dihapuskan.
+10. ubah pada show_main untuk memfilter model Product hanya memilih objects sesuai filter User yang login
+11. ubah pada show_main 'name' jadi request.user.username
+12. Lakukan migrations dan set data defaultnya dengan ID 1 agar data yang sebelumnya sudah masuk akan masuk kedalam ID 1 user dalam kasus ini dengan username "neva".
+
 **README TUGAS 3**
 
 **Pertanyaan**

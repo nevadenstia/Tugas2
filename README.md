@@ -2,6 +2,7 @@
 
 **Pertanyaan**
 **1. Apa perbedaan antara form POST dan form GET dalam Django?**
+
 - Metode POST Django
 Digunakan untuk mengirim data ke server untuk diproses yang dapat di akses dengan request.POST. Data dari form dikirim jadi body request maka tidak ditampilkan dalam bentuk URL. Dalam Tugas 3, metode POST digunakan saat menginput data dalam create_product.html serta diproses dalam fungsi create_product menggunakan parameter request.
 - Metode GET Django
@@ -16,49 +17,51 @@ Digunakan untuk mengirim data kepada server untuk permintaan data. Data yang dik
 JSON adalah format data yang ringkas, mudah dibaca, dan mudah diinterpretasikan oleh bahasa pemrograman. JSON mendukung tipe data kompleks seperti objek dan array, yang berguna untuk merepresentasikan data yang rumit. JSON dapat digunakan dengan berbagai bahasa pemrograman, menjadikannya pilihan yang serbaguna untuk pertukaran data antara berbagai teknologi. JSON biasanya lebih efisien dalam hal ukuran data daripada XML, sehingga mengurangi penggunaan bandwidth.
 
 **4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
-
-	Step 1: Membuat input form untuk menambahkan objek model pada app sebelumnya.
-	- Buat kerangka web base.html pada templates di root folder
-	- Pisahkan CSS (style) main.html pada Tugas 2 dan dirapihkan dalam base.html
-	- Buat main.html dan create_product.html dengan kerangka base.html
-	- Modifikasi models.py menjadi 2 class Main dan class Product
-	- Buat forms.py dalam main dengan model Product dan fields yang mau diisi
-	- Tambahkan button add new product di main.html dan buat loop for product in products
-	- Modifikasi di show_main pada views.py dengan menambahkan products = Product.object.all() yang kemudian merubah context dengan isi 'products' = product.
-	- Tambahkan total_stock dengan menggunakan models.Sum antara 'amount' dan 'total_stock' pada show_main untuk mentotalkan stock
-	- Buat create_product pada views.py yang memanggil ProductForm dari forms.py dengan parameter (request.POST)
-	- Modifikasi urls.py dalam main dengan adanya create-product yang memanggil fungsi create_product
-	- open virtual environment
-	- run python manage.py makemigrations dan migrate karena ada perubahan dalam models
-	- run python manage.py runserver
-		  
-	Step 2: Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
-	- add import HttpResponse dan serializers
-	- tambahkan show_xml, show_json, show_xml_by_id, show_json_by_id pada views.py
+Step 1: Membuat input form untuk menambahkan objek model pada app sebelumnya.
+- Buat kerangka web base.html pada templates di root folder
+- Pisahkan CSS (style) main.html pada Tugas 2 dan dirapihkan dalam base.html
+- Buat main.html dan create_product.html dengan kerangka base.html
+- Modifikasi models.py menjadi 2 class Main dan class Product
+- Buat forms.py dalam main dengan model Product dan fields yang mau diisi
+- Tambahkan button add new product di main.html dan buat loop for product in products
+- Modifikasi di show_main pada views.py dengan menambahkan products = Product.object.all() yang kemudian merubah context dengan isi 'products' = product.
+- Tambahkan total_stock dengan menggunakan models.Sum antara 'amount' dan 'total_stock' pada show_main untuk mentotalkan stock
+- Buat create_product pada views.py yang memanggil ProductForm dari forms.py dengan parameter (request.POST)
+- Modifikasi urls.py dalam main dengan adanya create-product yang memanggil fungsi create_product
+- open virtual environment
+- run python manage.py makemigrations dan migrate karena ada perubahan dalam models
+- run python manage.py runserver
 	  
-	Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
-	- modifikasi urls.py dengan menambahkan path setiap fungsi ("xml/", "json", "xml/<int:id>/", "json/<int:id>/") dan pastikan import main.views
-	- open virtual environment
-	- run python manage.py runserver
+Step 2: Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+- add import HttpResponse dan serializers
+- tambahkan show_xml, show_json, show_xml_by_id, show_json_by_id pada views.py
+  
+Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+- modifikasi urls.py dengan menambahkan path setiap fungsi ("xml/", "json", "xml/<int:id>/", "json/<int:id>/") dan pastikan import main.views
+- open virtual environment
+- run python manage.py runserver
   
 **5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.**
 
-screenshot /create-product :
+- screenshot / :
+![Screenshot (721)](https://github.com/nevadenstia/Tugas2/assets/125188477/edd54d09-297e-4a66-9031-bb0ac5e942d7)
+
+- screenshot /create-product :
 ![Screenshot (720)](https://github.com/nevadenstia/Tugas2/assets/125188477/0db916cb-2a60-43b5-ac84-d66f3141ebe0)
 
-screenshot /main :
+- screenshot /main :
 ![Screenshot (715)](https://github.com/nevadenstia/Tugas2/assets/125188477/b6ae302d-165c-4cfd-9a2d-17c87019d7b2)
 
-screenshot /xml :
+- screenshot /xml :
 ![Screenshot (716)](https://github.com/nevadenstia/Tugas2/assets/125188477/9fd7089d-33e9-4dc6-9472-8558988dfd33)
 
-screenshot /xml by id :
+- screenshot /xml by id :
 ![Screenshot (717)](https://github.com/nevadenstia/Tugas2/assets/125188477/1e0c46df-3100-4db8-941b-65cd3aad217a)
 
-screenshot /json :
+- screenshot /json :
 ![Screenshot (718)](https://github.com/nevadenstia/Tugas2/assets/125188477/683af63a-96a9-4602-a5ed-9db575b63636)
 
-screenshot /json by id:
+- screenshot /json by id:
 ![Screenshot (719)](https://github.com/nevadenstia/Tugas2/assets/125188477/2e9711c9-143f-4096-b8bd-1a49be8da09f)
 
 ########################################################################################################

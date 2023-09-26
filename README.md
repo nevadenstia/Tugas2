@@ -26,6 +26,7 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cook
 10. ubah pada show_main untuk memfilter model Product hanya memilih objects sesuai filter User yang login
 11. ubah pada show_main 'name' jadi request.user.username
 12. Lakukan migrations dan set data defaultnya dengan ID 1 agar data yang sebelumnya sudah masuk akan masuk kedalam ID 1 user dalam kasus ini dengan username "neva".
+13. Add 2 dummy account "neva" dan "orang" dengan password = "abc123abc123" lalu masing-masing isi 3 data products.
 
 **README TUGAS 3**
 

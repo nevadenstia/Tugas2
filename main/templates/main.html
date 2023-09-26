@@ -93,4 +93,16 @@
         </a>
     </div>
 
+    <div style="text-align: center; padding: 20px;">
+        <a href="{% url 'main:logout' %}">
+            <button>
+                Logout
+            </button>
+        </a>
+    </div>
+
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+
+
 {% endblock content %}

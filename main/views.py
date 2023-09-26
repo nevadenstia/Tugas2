@@ -17,8 +17,8 @@ import datetime
 @login_required(login_url='/login')
 
 def show_main(request):
-    total_stock = Product.objects.all().aggregate(total_stock=Sum('amount'))['total_stock'] or 0
     products = Product.objects.filter(user=request.user)
+    total_stock = products.aggregate(total_stock=Sum('amount'))['total_stock'] or 0
 
     context = {
         'name' : request.user.username,

@@ -13,7 +13,7 @@ Cookies dalam konteks aplikasi web adalah data kecil yang disimpan di sisi klien
 **4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
 Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cookies dapat menjadi rentan jika tidak diatur dengan benar. Risiko potensial termasuk peretasan sesi (session hijacking), di mana penyerang mencuri cookie sesi pengguna untuk mengakses akun mereka. Untuk mengurangi risiko ini, Anda harus mengimplementasikan tindakan keamanan seperti HTTPS untuk melindungi data selama transit dan menggunakan praktik terbaik dalam manajemen sesi, seperti menghindari menyimpan data sensitif dalam cookies dan mengatur atribut seperti Secure dan HttpOnly untuk meningkatkan keamanan cookies.
 
-**5.Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial). **
+**5.Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 1. Membuat fungsi register, login_user, dan logout_user pada main.views yang tetap menggunakan style css dari base.html
 2. Membuat urls dengan /register, /login, dan /logout pada main.urls
 3. Menambahkan register.html dan login.html pada main/templates
@@ -25,8 +25,14 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cook
 9. Karena name pada setiap kali login akan diisi oleh nama user, maka name pada models Main dihapuskan.
 10. ubah pada show_main untuk memfilter model Product hanya memilih objects sesuai filter User yang login
 11. ubah pada show_main 'name' jadi request.user.username
-12. Lakukan migrations dan set data defaultnya dengan ID 1 agar data yang sebelumnya sudah masuk akan masuk kedalam ID 1 user dalam kasus ini dengan username "neva".
-13. Add 2 dummy account "neva" dan "orang" dengan password = "abc123abc123" lalu masing-masing isi 3 data products.
+12. buat fungsi add_item dan subtract_item pada views.py menggunakan import get_objects_or_404 pada Product dengan id menggunakan item_id gunakan .amount +/- dan .save()
+13. buat fungsi delete_item pada views.py menggunakan import get_objects_or_404 dan gunakan .delete().
+14. ubah urls.py untuk memanggil ketiga fungsi tersebut yaitu add_item/ subtract_item/ dan delete_item/
+15. ubah main.html dengan menambahkan tiga button dengan method POST dan href pada main:add_item, main:delete_item, dan main:subtract_item.
+16. ubah juga css pada base.html sesuai kebutuhan desain
+17. Lakukan migrations dan set data defaultnya dengan ID 1 agar data yang sebelumnya sudah masuk akan masuk kedalam ID 1 user dalam kasus ini dengan username "neva".
+18. Add 2 dummy account "neva" dan "orang" dengan password = "abc123abc123" lalu masing-masing isi 3 data products.
+19. git add, commit, push ke github.
 
 **README TUGAS 3**
 

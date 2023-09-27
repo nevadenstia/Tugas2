@@ -11,12 +11,14 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import datetime
+from django.shortcuts import get_object_or_404, redirect
 
 # Create your views here.
 
 @login_required(login_url='/login')
 
 def show_main(request):
+
     products = Product.objects.filter(user=request.user)
     total_stock = products.aggregate(total_stock=Sum('amount'))['total_stock'] or 0
 
@@ -42,6 +44,28 @@ def create_product(request):
 
     context = {'form': form}
     return render(request, "create_product.html", context)
+
+# Fungsi untuk menambah amount suatu objek sebanyak satu
+def add_item(request, item_id):
+    item = get_object_or_404(Product, id=item_id)
+    item.amount += 1
+    item.save()
+    return redirect('main:show_main')
+
+# Fungsi untuk mengurangi jumlah stok suatu objek sebanyak satu
+def subtract_item(request, item_id):
+    item = get_object_or_404(Product, id=item_id)
+    if item.amount > 0:
+        item.amount -= 1
+        item.save()
+    return redirect('main:show_main')
+
+# Fungsi untuk menghapus suatu objek dari inventori
+def delete_item(request, item_id):
+    item = get_object_or_404(Product, id=item_id)
+    item.delete()
+    return redirect('main:show_main')
+
 
 def register(request):
     form = UserCreationForm()

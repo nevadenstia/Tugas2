@@ -79,6 +79,23 @@
                     <h5>Reviews:</h5>
                     <p>{{ product.reviews }}</p>
                 </div>
+                <div class="item-detail">
+                    <div class="quantity-control">
+                        <form action="{% url 'main:delete_item' product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                        <form action="{% url 'main:subtract_item' product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="quantity-button">-</button>
+                        </form>
+                        <form action="{% url 'main:add_item' product.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="quantity-button">+</button>
+                        </form>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@ HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangu
 	- body
 	- col
 	- head
-	- headere
+	- header
 	- img
 	- nav
 	- script

@@ -21,14 +21,15 @@ def show_main(request):
 
     products = Product.objects.filter(user=request.user)
     total_stock = products.aggregate(total_stock=Sum('amount'))['total_stock'] or 0
-
+    # Check if 'last_login' exists in request.COOKIES and set a default value if not found
+    last_login = request.COOKIES.get('last_login', 'N/A')
     context = {
         'name' : request.user.username,
         'npm' : '2206083073',
         'kelas' : 'PBP B',
         'total_stock' : total_stock,
         'products' : products,
-        'last_login' : request.COOKIES['last_login'],
+        'last_login' : last_login,
     }
 
     return render(request, "main.html", context)

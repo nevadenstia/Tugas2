@@ -1,10 +1,18 @@
-**README TUGAS 5**
+<h1>**README TUGAS 5**
 **1.Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
 Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
 
 **Jelaskan HTML5 Tag yang kamu ketahui.**
-HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi header, nav, section, article, aside, footer, figure,, dan banyak lagi. Kita dapat menggunakannya untuk memberikan makna dan struktur yang lebih baik pada elemen-elemen dalam dokumen kita.
-
+HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi:
+- body
+- col
+- head
+- headere
+- img
+- nav
+- script
+- style
+- strong
 **Jelaskan perbedaan antara margin dan padding.**
 Margin dan padding adalah dua properti CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML.
 - Margin: Margin adalah ruang di luar elemen, yang memisahkan elemen dari elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna dan berfungsi untuk mengatur jarak antara elemen-elemen.
@@ -33,10 +41,10 @@ Karena sebelum Tugas 5 ini aku sudah menggunakan CSS, dengan memisahkan style CS
 	- .choose-box: Ini adalah container untuk pemilihan gambar dalam formulir.
 	- .new-boxes-container: Ini adalah container untuk mengatur dua kotak (kiri dan kanan) yang mungkin digunakan dalam tampilan yang lebih kompleks. Ini digunakan untuk mengorganisir elemen-elemen di halaman.
 2. edit heading sesuai kebutuhan:
-- <h1>: Heading ini digunakan dalam elemen dengan kelas .banner untuk menampilkan judul besar dalam header banner di halaman toko online.
-- <h3>: Heading ini digunakan beberapa kali dalam kode Anda, biasanya digunakan untuk menampilkan subjudul atau informasi tambahan dalam halaman, misalnya, Nama, NPM, Kelas, dll.
-- <h4>: Heading ini digunakan dalam elemen dengan kelas .product-container untuk menampilkan judul yang menyatakan total stok produk.
-- <h5>: Heading ini digunakan beberapa kali dalam kode Anda untuk menampilkan subjudul atau informasi tambahan, seperti "Item Name:", "Available Stock:", "Description:", "Rating:", "Reviews:", dan lainnya.
+- header1 = Heading ini digunakan dalam elemen dengan kelas .banner untuk menampilkan judul besar dalam header banner di halaman toko online.
+- header2 = Heading ini digunakan beberapa kali dalam kode Anda, biasanya digunakan untuk menampilkan subjudul atau informasi tambahan dalam halaman, misalnya, Nama, NPM, Kelas, dll.
+- header3 = Heading ini digunakan dalam elemen dengan kelas .product-container untuk menampilkan judul yang menyatakan total stok produk.
+- header4 = Heading ini digunakan beberapa kali dalam kode Anda untuk menampilkan subjudul atau informasi tambahan, seperti "Item Name:", "Available Stock:", "Description:", "Rating:", "Reviews:", dan lainnya.
 
 3. edit tambahan sesuai kebutuhan (termasuk format image, format daftar inventori, dst)
 	- .button-container: Ini adalah kelas yang digunakan untuk mengatur margin atas elemen-elemen tombol dalam container pendaftaran.
@@ -61,7 +69,7 @@ div class="product-box": Ini adalah elemen div dengan kelas "product-box". Setia
 Jadi, jika produk saat ini adalah produk terakhir dalam loop, maka elemen div ini akan memiliki kelas "product-box last-row". Ini mungkin digunakan untuk memberikan tampilan yang berbeda atau gaya tambahan pada produk terakhir dalam daftar produk, seperti mengganti warna latar belakangnya atau mengatur margin bawah tambahan untuk memisahkan produk terakhir dari produk sebelumnya dalam tampilan halaman.
 
 ###############################################################################################################################################################################################
-**README TUGAS 4**
+<h1>**README TUGAS 4**
 
 **Pertanyaan**
 **1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
@@ -99,7 +107,7 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cook
 
 
 ########################################################
-**README TUGAS 3**
+<h1>**README TUGAS 3**
 
 **Pertanyaan**
 **1. Apa perbedaan antara form POST dan form GET dalam Django?**
@@ -167,7 +175,7 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
 
 ########################################################################################################
 
-**README TUGAS 2**
+<h1>**README TUGAS 2**
 
 Tautan aplikasi Adaptable 	: https://tugas2.adaptable.app/
 Tautan Repositori GitHub 	: https://github.com/nevadenstia/Tugas2.git

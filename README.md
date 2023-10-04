@@ -1,75 +1,78 @@
 <h3>README TUGAS 5</h3>
 **Pertanyaan**
 **1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
-
-Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
+	
+	Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
 
 **2. Jelaskan HTML5 Tag yang kamu ketahui.**
 HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi:
-- body
-- col
-- head
-- headere
-- img
-- nav
-- script
-- style
-- strong
-
+	- body
+	- col
+	- head
+	- headere
+	- img
+	- nav
+	- script
+	- style
+	- strong
+ 
 **3. Jelaskan perbedaan antara margin dan padding.**
-Margin dan padding adalah dua properti CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML.
-- Margin: Margin adalah ruang di luar elemen, yang memisahkan elemen dari elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna dan berfungsi untuk mengatur jarak antara elemen-elemen.
-- Padding: Padding adalah ruang di dalam elemen, yang memisahkan isi elemen dari tepi elemen itu sendiri. Padding berada di sekitar isi elemen dan dapat memiliki latar belakang atau warna. Ini digunakan untuk mengatur jarak antara konten elemen dan batasnya.
+
+	Margin dan padding adalah dua properti CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML.
+	- Margin: Margin adalah ruang di luar elemen, yang memisahkan elemen dari elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna dan berfungsi untuk mengatur jarak antara elemen-elemen.
+	- Padding: Padding adalah ruang di dalam elemen, yang memisahkan isi elemen dari tepi elemen itu sendiri. Padding berada di sekitar isi elemen dan dapat memiliki latar belakang atau warna. Ini digunakan untuk mengatur jarak antara konten elemen dan batasnya.
   
 **4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
-Tailwind CSS adalah framework CSS yang berfokus pada utilitas. Ini berarti kita menggunakan sejumlah besar kelas CSS yang telah ditentukan sebelumnya untuk membangun tampilan kita. Tailwind memberikan tingkat fleksibilitas yang tinggi, tetapi juga memerlukan pemahaman yang kuat tentang kelas-kelas utilitas yang tersedia. Ini cocok untuk proyek-proyek yang memerlukan penyesuaian dan desain yang unik.
 
-Bootstrap, di sisi lain, adalah framework CSS yang lebih kaku dan datang dengan komponen siap pakai, seperti tombol, jumbotron, formulir, dan banyak lagi. Ini memungkinkan kita membangun situs dengan cepat tanpa perlu menulis banyak kode CSS khusus. Bootstrap cocok untuk proyek-proyek yang perlu dikembangkan dengan cepat dan mengikuti pedoman desain yang sudah ada.
-
-Kapan kita harus menggunakan Bootstrap atau Tailwind tergantung pada kebutuhan proyek kita. Gunakan Bootstrap jika kita ingin cepat dan mengikuti pedoman desain yang jelas. Gunakan Tailwind jika kita ingin fleksibilitas lebih besar dalam desain dan siap untuk menghabiskan waktu memahami kelas-kelas utilitas yang ada.
+	Tailwind CSS adalah framework CSS yang berfokus pada utilitas. Ini berarti kita menggunakan sejumlah besar kelas CSS yang telah ditentukan sebelumnya untuk membangun tampilan kita. Tailwind memberikan tingkat fleksibilitas yang tinggi, tetapi juga memerlukan pemahaman yang kuat tentang kelas-kelas utilitas yang tersedia. Ini cocok untuk proyek-proyek yang memerlukan penyesuaian dan desain yang unik.
+	
+	Bootstrap, di sisi lain, adalah framework CSS yang lebih kaku dan datang dengan komponen siap pakai, seperti tombol, jumbotron, formulir, dan banyak lagi. Ini memungkinkan kita membangun situs dengan cepat tanpa perlu menulis banyak kode CSS khusus. Bootstrap cocok untuk proyek-proyek yang perlu dikembangkan dengan cepat dan mengikuti pedoman desain yang sudah ada.
+	
+	Kapan kita harus menggunakan Bootstrap atau Tailwind tergantung pada kebutuhan proyek kita. Gunakan Bootstrap jika kita ingin cepat dan mengikuti pedoman desain yang jelas. Gunakan Tailwind jika kita ingin fleksibilitas lebih besar dalam desain dan siap untuk menghabiskan waktu memahami kelas-kelas utilitas yang ada.
 
 **5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
-Karena sebelum Tugas 5 ini aku sudah menggunakan CSS, dengan memisahkan style CSSnya di base.html sehingga hanya perlu memanggil div class di main.html. Tentunya juga beberapa tambahan style lainnya. Serta juga karena pada Tugas 4, aku sudah membuat button add substract dan delete product untuk menghapus daftar inventori. Sehingga pada Tugas 5 ini aku fokus pada kustomisasi halaman .html saja, juga tentunya merubah untuk menggunakan approach card pada daftar inventori.
 
-1. Set dulu background color di base.html. buat .banner .login-container dan .registration-container, ini nantinya akan jadi background image dengan menyisipkan link image pada url();
-2. Buat container yang dibutuhkan:
-	- login-container: Ini adalah container untuk halaman login. Ini digunakan untuk mengatur posisi elemen-elemen dalam halaman login.
-	- .login: Ini adalah container untuk elemen-elemen login seperti formulir login dan tombol login. Ini memiliki latar belakang semi-transparan putih yang memungkinkan teks terbaca.
-	- .product-container: Ini adalah container untuk menampilkan daftar produk dalam halaman toko online. Ini memiliki latar belakang abu-abu dan elemen-elemen yang berhubungan dengan produk.
-	- .registration-container: Ini adalah container untuk halaman pendaftaran pengguna. Ini digunakan untuk mengatur posisi elemen-elemen dalam halaman pendaftaran.
-	- .registration: Ini adalah container untuk elemen-elemen pendaftaran seperti formulir pendaftaran dan tombol pendaftaran. Ini memiliki latar belakang semi-transparan putih yang memungkinkan teks terbaca.
-	- .product-box: Ini adalah container untuk setiap kotak produk dalam daftar produk. Setiap kotak ini berisi informasi tentang satu produk, seperti nama produk, gambar, deskripsi, dll.
-	- .banner: Ini adalah container untuk header banner di halaman toko online. Ini memiliki latar belakang gambar dan digunakan untuk menampilkan pesan selamat datang dan informasi tentang toko.
-	- .image-choose-container: Ini adalah container yang digunakan untuk mengatur elemen-elemen terkait pemilihan gambar.
-	- .choose-box: Ini adalah container untuk pemilihan gambar dalam formulir.
-	- .new-boxes-container: Ini adalah container untuk mengatur dua kotak (kiri dan kanan) yang mungkin digunakan dalam tampilan yang lebih kompleks. Ini digunakan untuk mengorganisir elemen-elemen di halaman.
-2. edit heading sesuai kebutuhan:
-- header1 = Heading ini digunakan dalam elemen dengan kelas .banner untuk menampilkan judul besar dalam header banner di halaman toko online.
-- header2 = Heading ini digunakan beberapa kali dalam kode Anda, biasanya digunakan untuk menampilkan subjudul atau informasi tambahan dalam halaman, misalnya, Nama, NPM, Kelas, dll.
-- header3 = Heading ini digunakan dalam elemen dengan kelas .product-container untuk menampilkan judul yang menyatakan total stok produk.
-- header4 = Heading ini digunakan beberapa kali dalam kode Anda untuk menampilkan subjudul atau informasi tambahan, seperti "Item Name:", "Available Stock:", "Description:", "Rating:", "Reviews:", dan lainnya.
+	Karena sebelum Tugas 5 ini aku sudah menggunakan CSS, dengan memisahkan style CSSnya di base.html sehingga hanya perlu memanggil div class di main.html. Tentunya juga beberapa tambahan style lainnya. Serta juga karena pada Tugas 4, aku sudah membuat button add substract dan delete product untuk menghapus daftar inventori. Sehingga pada Tugas 5 ini aku fokus pada kustomisasi halaman .html saja, juga tentunya merubah untuk menggunakan approach card pada daftar inventori.
 
-3. edit tambahan sesuai kebutuhan (termasuk format image, format daftar inventori, dst)
-	- .button-container: Ini adalah kelas yang digunakan untuk mengatur margin atas elemen-elemen tombol dalam container pendaftaran.
-	- .quantity-control: Ini adalah kelas yang digunakan untuk mengatur tata letak dari tombol-tombol kontrol kuantitas di setiap produk pada halaman produk.
-	- .quantity-button: Ini adalah kelas yang digunakan untuk mengatur tampilan tombol-tombol kontrol kuantitas produk (tombol kurang, tambah, dll).
-	- .center-image: Ini adalah kelas yang digunakan untuk mengatur tampilan gambar agar berada di tengah container dan membatasi lebar dan tingginya.
-	- .item-details: Ini adalah kelas yang digunakan untuk mengatur tampilan elemen-elemen yang menampilkan detail produk, seperti nama produk, stok, deskripsi, peringkat, ulasan, dll.
-	- .image-container: Ini adalah kelas yang digunakan untuk mengatur tampilan kotak yang berisi gambar produk. Ini termasuk dalam elemen dengan kelas .product-box.
-	- .left-box dan .right-box: Ini adalah kelas yang digunakan untuk mengatur tampilan dua kotak (kiri dan kanan) dalam container .new-boxes-container.
+	1. Set dulu background color di base.html. buat .banner .login-container dan .registration-container, ini nantinya akan jadi background image dengan menyisipkan link image pada url();
+	2. Buat container yang dibutuhkan:
+		- login-container: Ini adalah container untuk halaman login. Ini digunakan untuk mengatur posisi elemen-elemen dalam halaman login.
+		- .login: Ini adalah container untuk elemen-elemen login seperti formulir login dan tombol login. Ini memiliki latar belakang semi-transparan putih yang memungkinkan teks terbaca.
+		- .product-container: Ini adalah container untuk menampilkan daftar produk dalam halaman toko online. Ini memiliki latar belakang abu-abu dan elemen-elemen yang berhubungan dengan produk.
+		- .registration-container: Ini adalah container untuk halaman pendaftaran pengguna. Ini digunakan untuk mengatur posisi elemen-elemen dalam halaman pendaftaran.
+		- .registration: Ini adalah container untuk elemen-elemen pendaftaran seperti formulir pendaftaran dan tombol pendaftaran. Ini memiliki latar belakang semi-transparan putih yang memungkinkan teks terbaca.
+		- .product-box: Ini adalah container untuk setiap kotak produk dalam daftar produk. Setiap kotak ini berisi informasi tentang satu produk, seperti nama produk, gambar, deskripsi, dll.
+		- .banner: Ini adalah container untuk header banner di halaman toko online. Ini memiliki latar belakang gambar dan digunakan untuk menampilkan pesan selamat datang dan informasi tentang toko.
+		- .image-choose-container: Ini adalah container yang digunakan untuk mengatur elemen-elemen terkait pemilihan gambar.
+		- .choose-box: Ini adalah container untuk pemilihan gambar dalam formulir.
+		- .new-boxes-container: Ini adalah container untuk mengatur dua kotak (kiri dan kanan) yang mungkin digunakan dalam tampilan yang lebih kompleks. Ini digunakan untuk mengorganisir elemen-elemen di halaman.
+	2. edit heading sesuai kebutuhan:
+	- header1 = Heading ini digunakan dalam elemen dengan kelas .banner untuk menampilkan judul besar dalam header banner di halaman toko online.
+	- header2 = Heading ini digunakan beberapa kali dalam kode Anda, biasanya digunakan untuk menampilkan subjudul atau informasi tambahan dalam halaman, misalnya, Nama, NPM, Kelas, dll.
+	- header3 = Heading ini digunakan dalam elemen dengan kelas .product-container untuk menampilkan judul yang menyatakan total stok produk.
+	- header4 = Heading ini digunakan beberapa kali dalam kode Anda untuk menampilkan subjudul atau informasi tambahan, seperti "Item Name:", "Available Stock:", "Description:", "Rating:", "Reviews:", dan lainnya.
+	
+	3. edit tambahan sesuai kebutuhan (termasuk format image, format daftar inventori, dst)
+		- .button-container: Ini adalah kelas yang digunakan untuk mengatur margin atas elemen-elemen tombol dalam container pendaftaran.
+		- .quantity-control: Ini adalah kelas yang digunakan untuk mengatur tata letak dari tombol-tombol kontrol kuantitas di setiap produk pada halaman produk.
+		- .quantity-button: Ini adalah kelas yang digunakan untuk mengatur tampilan tombol-tombol kontrol kuantitas produk (tombol kurang, tambah, dll).
+		- .center-image: Ini adalah kelas yang digunakan untuk mengatur tampilan gambar agar berada di tengah container dan membatasi lebar dan tingginya.
+		- .item-details: Ini adalah kelas yang digunakan untuk mengatur tampilan elemen-elemen yang menampilkan detail produk, seperti nama produk, stok, deskripsi, peringkat, ulasan, dll.
+		- .image-container: Ini adalah kelas yang digunakan untuk mengatur tampilan kotak yang berisi gambar produk. Ini termasuk dalam elemen dengan kelas .product-box.
+		- .left-box dan .right-box: Ini adalah kelas yang digunakan untuk mengatur tampilan dua kotak (kiri dan kanan) dalam container .new-boxes-container.
 
 
-3. Tambahkan fitur bonus, membedakan warna terakhir dari baris terakhir daftar inventori:
+**3. Tambahkan fitur bonus, membedakan warna terakhir dari baris terakhir daftar inventori:**
 
-Buat style last-row, last-row adalah kelas yang digunakan untuk mengatur latar belakang elemen terakhir dalam daftar produk untuk memberikan tampilan yang berbeda (mengganti warna latar belakang). Tambahkan  div class="product-box{% if forloop.last %} last-row{% endif %}" diatas product-box namun di dalam loop for product in products.
-
-Kode div class="product-box{% if forloop.last %} last-row{% endif %}" digunakan untuk membuat elemen container dalam loop yang mengulang produk-produk yang ditampilkan di halaman produk Anda. Mari kita jelaskan bagian ini lebih rinci:
-
-div class="product-box": Ini adalah elemen div dengan kelas "product-box". Setiap produk dalam daftar produk Anda dibungkus dalam elemen ini. Ini digunakan untuk mengelompokkan informasi terkait produk bersama-sama, seperti gambar produk, nama produk, deskripsi, dll.
-
-{% if forloop.last %} last-row{% endif %}: Ini adalah struktur pengendali kondisional yang digunakan di dalam atribut kelas elemen. Ini menguji apakah saat ini produk yang sedang diproses adalah produk terakhir dalam loop atau tidak. Jika saat ini produk terakhir, maka akan ditambahkan kelas "last-row" ke elemen.
-
-Jadi, jika produk saat ini adalah produk terakhir dalam loop, maka elemen div ini akan memiliki kelas "product-box last-row". Ini mungkin digunakan untuk memberikan tampilan yang berbeda atau gaya tambahan pada produk terakhir dalam daftar produk, seperti mengganti warna latar belakangnya atau mengatur margin bawah tambahan untuk memisahkan produk terakhir dari produk sebelumnya dalam tampilan halaman.
+	Buat style last-row, last-row adalah kelas yang digunakan untuk mengatur latar belakang elemen terakhir dalam daftar produk untuk memberikan tampilan yang berbeda (mengganti warna latar belakang). Tambahkan  div class="product-box{% if forloop.last %} last-row{% endif %}" diatas product-box namun di dalam loop for product in products.
+	
+	Kode div class="product-box{% if forloop.last %} last-row{% endif %}" digunakan untuk membuat elemen container dalam loop yang mengulang produk-produk yang ditampilkan di halaman produk Anda. Mari kita jelaskan bagian ini lebih rinci:
+	
+	div class="product-box": Ini adalah elemen div dengan kelas "product-box". Setiap produk dalam daftar produk Anda dibungkus dalam elemen ini. Ini digunakan untuk mengelompokkan informasi terkait produk bersama-sama, seperti gambar produk, nama produk, deskripsi, dll.
+	
+	{% if forloop.last %} last-row{% endif %}: Ini adalah struktur pengendali kondisional yang digunakan di dalam atribut kelas elemen. Ini menguji apakah saat ini produk yang sedang diproses adalah produk terakhir dalam loop atau tidak. Jika saat ini produk terakhir, maka akan ditambahkan kelas "last-row" ke elemen.
+	
+	Jadi, jika produk saat ini adalah produk terakhir dalam loop, maka elemen div ini akan memiliki kelas "product-box last-row". Ini mungkin digunakan untuk memberikan tampilan yang berbeda atau gaya tambahan pada produk terakhir dalam daftar produk, seperti mengganti warna latar belakangnya atau mengatur margin bawah tambahan untuk memisahkan produk terakhir dari produk sebelumnya dalam tampilan halaman.
 
 ###############################################################################################################################################################################################
 <h3>**README TUGAS 4**</h3>

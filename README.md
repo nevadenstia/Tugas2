@@ -1,8 +1,10 @@
-<h3>**README TUGAS 5**</h3>
-**1.Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
+<h3>README TUGAS 5</h3>
+**Pertanyaan**
+**1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
+
 Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
 
-**Jelaskan HTML5 Tag yang kamu ketahui.**
+**2. Jelaskan HTML5 Tag yang kamu ketahui.**
 HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi:
 - body
 - col
@@ -13,19 +15,20 @@ HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangu
 - script
 - style
 - strong
-**Jelaskan perbedaan antara margin dan padding.**
+
+**3. Jelaskan perbedaan antara margin dan padding.**
 Margin dan padding adalah dua properti CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML.
 - Margin: Margin adalah ruang di luar elemen, yang memisahkan elemen dari elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna dan berfungsi untuk mengatur jarak antara elemen-elemen.
 - Padding: Padding adalah ruang di dalam elemen, yang memisahkan isi elemen dari tepi elemen itu sendiri. Padding berada di sekitar isi elemen dan dapat memiliki latar belakang atau warna. Ini digunakan untuk mengatur jarak antara konten elemen dan batasnya.
   
-**Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+**4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
 Tailwind CSS adalah framework CSS yang berfokus pada utilitas. Ini berarti kita menggunakan sejumlah besar kelas CSS yang telah ditentukan sebelumnya untuk membangun tampilan kita. Tailwind memberikan tingkat fleksibilitas yang tinggi, tetapi juga memerlukan pemahaman yang kuat tentang kelas-kelas utilitas yang tersedia. Ini cocok untuk proyek-proyek yang memerlukan penyesuaian dan desain yang unik.
 
 Bootstrap, di sisi lain, adalah framework CSS yang lebih kaku dan datang dengan komponen siap pakai, seperti tombol, jumbotron, formulir, dan banyak lagi. Ini memungkinkan kita membangun situs dengan cepat tanpa perlu menulis banyak kode CSS khusus. Bootstrap cocok untuk proyek-proyek yang perlu dikembangkan dengan cepat dan mengikuti pedoman desain yang sudah ada.
 
 Kapan kita harus menggunakan Bootstrap atau Tailwind tergantung pada kebutuhan proyek kita. Gunakan Bootstrap jika kita ingin cepat dan mengikuti pedoman desain yang jelas. Gunakan Tailwind jika kita ingin fleksibilitas lebih besar dalam desain dan siap untuk menghabiskan waktu memahami kelas-kelas utilitas yang ada.
 
-**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+**5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 Karena sebelum Tugas 5 ini aku sudah menggunakan CSS, dengan memisahkan style CSSnya di base.html sehingga hanya perlu memanggil div class di main.html. Tentunya juga beberapa tambahan style lainnya. Serta juga karena pada Tugas 4, aku sudah membuat button add substract dan delete product untuk menghapus daftar inventori. Sehingga pada Tugas 5 ini aku fokus pada kustomisasi halaman .html saja, juga tentunya merubah untuk menggunakan approach card pada daftar inventori.
 
 1. Set dulu background color di base.html. buat .banner .login-container dan .registration-container, ini nantinya akan jadi background image dengan menyisipkan link image pada url();

@@ -1,5 +1,6 @@
 <h3>README TUGAS 5</h3>
 **Pertanyaan**
+
 **1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
 	
 	Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.

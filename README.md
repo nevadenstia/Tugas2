@@ -1,4 +1,4 @@
-<h1>**README TUGAS 5**
+<h3>**README TUGAS 5**</h3>
 **1.Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
 Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
 
@@ -69,7 +69,7 @@ div class="product-box": Ini adalah elemen div dengan kelas "product-box". Setia
 Jadi, jika produk saat ini adalah produk terakhir dalam loop, maka elemen div ini akan memiliki kelas "product-box last-row". Ini mungkin digunakan untuk memberikan tampilan yang berbeda atau gaya tambahan pada produk terakhir dalam daftar produk, seperti mengganti warna latar belakangnya atau mengatur margin bawah tambahan untuk memisahkan produk terakhir dari produk sebelumnya dalam tampilan halaman.
 
 ###############################################################################################################################################################################################
-<h1>**README TUGAS 4**
+<h3>**README TUGAS 4**</h3>
 
 **Pertanyaan**
 **1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
@@ -107,7 +107,7 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cook
 
 
 ########################################################
-<h1>**README TUGAS 3**
+<h3>**README TUGAS 3**</h3>
 
 **Pertanyaan**
 **1. Apa perbedaan antara form POST dan form GET dalam Django?**
@@ -175,7 +175,7 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
 
 ########################################################################################################
 
-<h1>**README TUGAS 2**
+<h3>**README TUGAS 2**</h3>
 
 Tautan aplikasi Adaptable 	: https://tugas2.adaptable.app/
 Tautan Repositori GitHub 	: https://github.com/nevadenstia/Tugas2.git

@@ -3,7 +3,7 @@
 Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.
 
 **Jelaskan HTML5 Tag yang kamu ketahui.**
-HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi <header>, <nav>, <section>, <article>, <aside>, <footer>, <figure>, <figcaption>, dan banyak lagi. Kita dapat menggunakannya untuk memberikan makna dan struktur yang lebih baik pada elemen-elemen dalam dokumen kita.
+HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangun struktur halaman web yang lebih jelas dan informatif. Beberapa tag HTML5 yang penting meliputi "<header>, <nav>, <section>, <article>, <aside>, <footer>, <figure>, <figcaption>", dan banyak lagi. Kita dapat menggunakannya untuk memberikan makna dan struktur yang lebih baik pada elemen-elemen dalam dokumen kita.
 
 **Jelaskan perbedaan antara margin dan padding.**
 Margin dan padding adalah dua properti CSS yang digunakan untuk mengatur ruang di sekitar elemen HTML.

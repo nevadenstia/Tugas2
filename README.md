@@ -1,6 +1,62 @@
 <h3>README TUGAS 5</h3>
 **Pertanyaan**
 
+**1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**
+
+	Synchronous Programming (Program Sinkron):
+	Pada synchronous programming, setiap permintaan HTTP ditangani secara berurutan satu per satu. Artinya, ketika sebuah permintaan datang, aplikasi akan menunggu hingga operasi yang sedang berlangsung selesai sebelum menangani permintaan berikutnya. Ini adalah pendekatan standar dalam banyak aplikasi web Django, di mana setiap permintaan diproses secara berurutan dan blocking, yang berarti permintaan berikutnya harus menunggu hingga permintaan sebelumnya selesai.
+	
+	Asynchronous Programming (Program Asynchronous):
+	Pada asynchronous programming, aplikasi web Django menggunakan konsep asynchronous I/O untuk mengatasi permintaan. Ini memungkinkan aplikasi untuk menangani beberapa permintaan secara konkuren (tidak berurutan), tanpa harus menunggu operasi I/O (seperti kueri database) untuk selesai.
+	Sebuah permintaan yang sedang menunggu operasi I/O dapat mengalihkan eksekusi ke permintaan lain, yang membuat aplikasi lebih efisien dan responsif.
+
+**2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+
+	Event-driven programming (pemrograman berbasis peristiwa) adalah paradigma pemrograman di mana aliran eksekusi program ditentukan oleh peristiwa atau kejadian yang terjadi dalam sistem atau aplikasi. Dalam event-driven progamming ada istilah produsen dan consumer, dimana produsen yang membuat event ke dalam queue dan consumer yang menerima event dari queue. Berbeda dengan penggunaan panggilan langsung, event-driven progamming benar-benar memisahkan produsen dari konsumen, sehingga menghasilkan beberapa manfaat penting. Misalnya, banyak produsen dan banyak konsumen dapat berkolaborasi untuk memproses permintaan masuk. Mencoba kembali operasi yang gagal dan memelihara riwayat peristiwa juga disederhanakan. Event-driven-progamming juga mempermudah penskalaan sistem besar, menambah kapasitas hanya dengan menambahkan konsumen.
+
+	Dalam tugas ini, ada beberapa penerapan event-driven progamming, contoh pada main.html:
+
+	Fungsi JavaScript refreshProducts mencerminkan event-driven progamming dengan mengambil daftar produk dari server dan memperbarui tampilan produk secara dinamis sebagai respons terhadap peristiwa pemanggilan refreshProducts.
+
+	Fungsi-fungsi JavaScript addProduct, delete_item, add_item, dan subtract_item juga mencerminkan event-driven progamming, karena mereka dipanggil saat pengguna berinteraksi dengan elemen antarmuka pengguna dan mengirim permintaan ke server atau melakukan tindakan terkait produk.
+
+	Event Handler pada elemen-elemen HTML, seperti onclick="addProduct", adalah contoh lain dari event-driven progamming, di mana fungsi yang akan dijalankan saat pengguna mengklik elemen tersebut ditentukan dalam atribut penanganan peristiwa. Ini memungkinkan aksi yang tepat dilakukan sebagai respons terhadap peristiwa pengguna.
+
+**3. Jelaskan penerapan asynchronous programming pada AJAX.**
+
+	Penerapan asynchronous programming pada AJAX dalam Django mengacu pada penggunaan teknik asinkronous (atau non-blocking) untuk mengirim permintaan HTTP dari browser ke server dan mengelola responnya tanpa menghalangi interaksi pengguna di halaman web. Teknik ini dapat membuat aplikasi web lebih responsif dan efisien, terutama dalam situasi di mana ada banyak permintaan ke server yang harus ditangani secara bersamaan.
+
+	Dalam tugas ini terdapat dua fungsi JavaScript asinkron, yaitu getProducts dan refreshProducts, yang digunakan untuk mengambil data produk dari server Django secara asinkron.
+
+**4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+
+	Menurut saya, setelah menggunakan kedua teknologi tersebut ada beberapa poin yang perlu diperhatikan.
+
+	Fetch API adalah pilihan terdepan untuk proyek-proyek modern karena merupakan standar web yang lebih ringan dan berbasis promise. Ia menyediakan fleksibilitas dalam mengelola permintaan asinkron, menghasilkan kode JavaScript yang lebih bersih dan efisien.
+
+	Sementara itu, jQuery masih relevan dalam situasi di mana dukungan browser lama diperlukan atau ketika Anda menginginkan kemudahan penggunaan dengan sintaksis yang sederhana dan banyak fitur tambahan untuk manipulasi DOM dan animasi. 
+
+	Melihat kedua perbandingan tersebut, menurut saya, teknologi yang lebih baik untuk digunakan adalah Fetch API. Alasan utamanya adalah Fetch API adalah standar web modern yang lebih ringan, berbasis promise, dan mendukung hampir semua browser terbaru. Hal ini memungkinkan pengembangan aplikasi web yang lebih responsif, efisien, dan sesuai dengan perkembangan teknologi web saat ini. Selain itu, penggunaan Fetch API mendorong praktik pengembangan yang lebih bersih dan lebih mudah dibaca karena sintaksisnya yang sederhana. Dengan Fetch API, kita dapat memanfaatkan fitur-fitur terbaru dalam web development dan menghindari ketergantungan pada library eksternal tambahan, menjadikannya pilihan yang lebih modern dan berkelanjutan untuk proyek-proyek masa depan.
+
+
+**5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+
+STEP 1: AJAX GET
+	- Buka views.py tambahkan get_product_json seperti di tutorial.
+	- Edit urls.py tambahkan get-product yang memanggil fungsi get_product_json
+	- Buka main.html cari bagian cardsnya (diatas for loop products) berikan id = "product-cards" untuk fungsi async nya nanti. Copy yang didalam div tersebut dan amankan.
+	- Buat async function getProducts yang return fetch url get_product_json.
+	- Buat async function refreshProducts yang mengambil getElementById("product-cards") tadi. Panggil await getProducts() masukan ke const products dan inisiasi let htmlString = '';
+	- Buat loop products dengan for each. Di dalam loop tambahkan htmlString tadi dengan paste isi div id "product-cards" diatas tadi.
+	- Ubah pemanggilan productnya dengan product.fields.attribute yang ingin diambil.
+	- Ubah button tersebut dengan onclick yang memanggil fungsi
+
+STEP 2: AJAX POST
+
+###################################################################################################################################
+<h3>README TUGAS 5</h3>
+**Pertanyaan**
+
 **1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
 	
 	Element Selector memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. Kita dapat menggunakannya ketika kita ingin menerapkan gaya ke semua elemen dengan tag HTML yang sama dalam dokumen. Misalnya, kita dapat menggunakan Element Selector untuk mengatur gaya teks dalam semua elemen <p> dalam halaman kita.

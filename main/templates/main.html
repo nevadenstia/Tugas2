@@ -34,61 +34,173 @@
         </div>
     </div>
 
+
     <div class="container mt-4">
         <h1 class = "text-white">List of Products</h1>
         <h4 class="text-white">Total Stock: {{ total_stock }}</h4>
 
-        <div class="product-container mt-4">
-            {% for product in products %}
-            <div class="product-box{% if forloop.last %} last-row{% endif %}">
-                <div class="product-box">
-                    <div class="row">
-                        <div class="col-md-4">
-                            {% if product.image %}
-                                <img src="{{ product.image }}" alt="{{ product.item_name }}" class="img-fluid">
-                            {% else %}
-                                <p>No Image Available</p>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Item Name:</h5>
-                            <p>{{ product.item_name }}</p>
-                            <h5>Available Stock:</h5>
-                            <p>{{ product.amount }}</p>
-                            <h5>Description:</h5>
-                            <p>{{ product.description }}</p>
-                            <h5>Rating:</h5>
-                            <p>{{ product.rating }}</p>
-                            <h5>Reviews:</h5>
-                            <p>{{ product.reviews }}</p>
-                            <div class="quantity-control">
-                                <form action="{% url 'main:delete_item' product.id %}" method="post">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                                <form action="{% url 'main:subtract_item' product.id %}" method="post">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-primary">-</button>
-                                </form>
-                                <form action="{% url 'main:add_item' product.id %}" method="post">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-success">+</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+        <div id = "product-cards" class="product-container mt-4"> </div>
 
         <div class="text-center mt-4">
             <a href="{% url 'main:create_product' %}" class="btn btn-primary">Add New Product</a>
         </div>
 
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+        </div>
+
         <h5 class="text-white">Sesi terakhir login: {{ last_login }}</h5>
     </div>
-</div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="item_name" class="col-form-label">Item name:</label>
+                            <input type="text" class="form-control" id="item_name" name="item_name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="col-form-label">Image:</label>
+                            <textarea class="form-control" id="image" name="image"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rating" class="col-form-label">Rating:</label>
+                            <input type="number" class="form-control" id="rating" name="rating"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviews" class="col-form-label">Reviews:</label>
+                            <textarea class="form-control" id="reviews" name="reviews"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+        async function refreshProducts() {
+            document.getElementById("product-cards").innerHTML = "";
+            const products = await getProducts();
+            let htmlString = ''; // Initialize the HTML string
+            products.forEach((product) => {
+                // Construct the HTML string for each product
+                htmlString += `
+                    <div class="product-box{% if forloop.last %} last-row{% endif %}">
+                        <div class="product-box">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    ${product.fields.image ? `<img src="${product.fields.image}" alt="${product.item_name}" class="img-fluid">` : '<p>No Image Available</p>'}
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>Item Name:</h5>
+                                    <p>${product.fields.item_name}</p>
+                                    <h5>Available Stock:</h5>
+                                    <p>${product.fields.amount}</p>
+                                    <h5>Description:</h5>
+                                    <p>${product.fields.description}</p>
+                                    <h5>Rating:</h5>
+                                    <p>${product.fields.rating}</p>
+                                    <h5>Reviews:</h5>
+                                    <p>${product.fields.reviews}</p>
+                                    <div>
+                                        <button id="button_del" class="btn btn-danger" onclick="delete_item(${product.id})">Delete</button>
+                                        <button id="button_plus" class="btn btn-success" onclick="add_item(${product.id})">+</button>
+                                        <button id="button_minus" class="btn btn-warning" onclick="subtract_item(${product.id})">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById("product-cards").innerHTML = htmlString;
+        }
+
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+
+            document.getElementById("form").reset()
+            return false
+        }
+
+        async function delete_item(id) {
+            fetch(`/delete_item/${id}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
+                }
+            })
+            .then(refreshProducts);
+        }
+
+        // Function to add one to the product's amount
+        async function add_item(id) {
+            fetch(`/add_item/${id}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
+                }
+            })
+            .then(refreshProducts);
+        }
+
+        // Function to subtract one from the product's amount
+        async function subtract_item(id) {
+            fetch(`/subtract_item/${id}`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
+                }
+            })
+            .then(refreshProducts);
+        }
+
+        // Helper function to get the CSRF token from cookies
+        async function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Check if this cookie contains the name we're looking for
+                    if (cookie.substring(0, name.length + 1) === name + "=") {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        document.getElementById("button_add").onclick = addProduct
+        refreshProducts();
+    </script>
 
 
 {% endblock content %}

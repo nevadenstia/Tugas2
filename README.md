@@ -45,13 +45,33 @@ STEP 1: AJAX GET
 	- Buka views.py tambahkan get_product_json seperti di tutorial.
 	- Edit urls.py tambahkan get-product yang memanggil fungsi get_product_json
 	- Buka main.html cari bagian cardsnya (diatas for loop products) berikan id = "product-cards" untuk fungsi async nya nanti. Copy yang didalam div tersebut dan amankan.
-	- Buat async function getProducts yang return fetch url get_product_json.
-	- Buat async function refreshProducts yang mengambil getElementById("product-cards") tadi. Panggil await getProducts() masukan ke const products dan inisiasi let htmlString = '';
+	- Pada <script> buat async function getProducts yang return fetch url get_product_json.
+	- Pada <script> buat async function refreshProducts yang mengambil getElementById("product-cards") tadi. Panggil await getProducts() masukan ke const products dan inisiasi let htmlString = '';
+	- Tambahkan refreshProduct() dalam <script> bagian bawah function
 	- Buat loop products dengan for each. Di dalam loop tambahkan htmlString tadi dengan paste isi div id "product-cards" diatas tadi.
-	- Ubah pemanggilan productnya dengan product.fields.attribute yang ingin diambil.
-	- Ubah button tersebut dengan onclick yang memanggil fungsi
+	- Ubah pemanggilan productnya dengan product.fields.(nama model) yang ingin diambil.
 
 STEP 2: AJAX POST
+	- Buat fungsi add_product_ajax pada views.py dan tambahkan path /create-ajax/ yang memanggil fungsi tersebut seperti di tutorial
+	- Ubah reques.POST.get pada add_product_ajax sesuai dengan model pada models.py
+	- Buat modal seperti di tutorial
+	- Pada <script> buat function biasa (non async) addProduct() yang fetch add_product_ajax dengan method POST dan body new FormData yang kemudian memanggil .then (refreshProduct)
+	- Buat button addProduct dengan id="button-add" lalu tambahkan pada <script> document.getElementById dengan id tersebut dan tambahkan .onclick = addProduct (fungsi sebelumnya)
+	- (BONUS) Terapkan AJAX DELETE dengan buat fungsi async deleteItem, addItem, subtractItem yang fetch path delete_item, add_item, dan subtract_item seperti pada button dulu, lalu menjalankan .then (refreshProducts)
+	- (BONUS) Edit button pada refreshProduct dengan menambahkan onclick, memanggil deleteItem, addItem, dan subtractItem dengan parameter product.pk.
+	- Ubah show_main pada views.py agar penghitungan stock tidak pada show_main
+	- Buat fungsi baru di views.py yang melakukan perhitungan yang sama seperti pada show_main sebelumnya dan juga tambahkan path di urls.py
+	- Ubah heading yang awalnya mengisi total_stock dikosongkan dan berikan id="total_stock"
+	- Buat async function baru di <script> getTotalStock yang fetch path get_total_stock lalu merubah id "total_stock" dengan getElementById sehingga innerHTMLnya dengan total_stock terupdate. Tambahkan getTotalStock() di bawah <script> dan juga tambahkan .then(getTotalStock) disebelah setiap .then(refreshProducts).
+
+STEP 3: run perintah collectstatic
+	pastikan pada settings.py ada hal berikut:
+	STATIC_URL = '/static/'
+	STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+	lalu run python manage.py collectstatic pada virtual env
+	muncullah folder static baru dengan semua file static
+
 
 ###################################################################################################################################
 <h3>README TUGAS 5</h3>

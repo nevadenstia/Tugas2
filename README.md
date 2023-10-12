@@ -1,4 +1,4 @@
-<h3>README TUGAS 5</h3>
+<h3>README TUGAS 6</h3>
 **Pertanyaan**
 
 **1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**

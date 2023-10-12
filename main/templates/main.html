@@ -37,13 +37,9 @@
 
     <div class="container mt-4">
         <h1 class = "text-white">List of Products</h1>
-        <h4 class="text-white">Total Stock: {{ total_stock }}</h4>
+        <h4 class="text-white" id="total_stock"></h4>
 
         <div id = "product-cards" class="product-container mt-4"> </div>
-
-        <div class="text-center mt-4">
-            <a href="{% url 'main:create_product' %}" class="btn btn-primary">Add New Product</a>
-        </div>
 
         <div class="text-center mt-4">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
@@ -108,34 +104,33 @@
             products.forEach((product) => {
                 // Construct the HTML string for each product
                 htmlString += `
-                    <div class="product-box{% if forloop.last %} last-row{% endif %}">
-                        <div class="product-box">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    ${product.fields.image ? `<img src="${product.fields.image}" alt="${product.item_name}" class="img-fluid">` : '<p>No Image Available</p>'}
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>Item Name:</h5>
-                                    <p>${product.fields.item_name}</p>
-                                    <h5>Available Stock:</h5>
-                                    <p>${product.fields.amount}</p>
-                                    <h5>Description:</h5>
-                                    <p>${product.fields.description}</p>
-                                    <h5>Rating:</h5>
-                                    <p>${product.fields.rating}</p>
-                                    <h5>Reviews:</h5>
-                                    <p>${product.fields.reviews}</p>
-                                    <div>
-                                        <button id="button_del" class="btn btn-danger" onclick="delete_item(${product.id})">Delete</button>
-                                        <button id="button_plus" class="btn btn-success" onclick="add_item(${product.id})">+</button>
-                                        <button id="button_minus" class="btn btn-warning" onclick="subtract_item(${product.id})">-</button>
-                                    </div>
+                    <div class="product-box">
+                        <div class="row">
+                            <div class="col-md-4">
+                                ${product.fields.image ? `<img src="${product.fields.image}" alt="${product.fields.item_name}" class="img-fluid">` : '<p>No Image Available</p>'}
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Item Name:</h5>
+                                <p>${product.fields.item_name}</p>
+                                <h5>Available Stock:</h5>
+                                <p>${product.fields.amount}</p>
+                                <h5>Description:</h5>
+                                <p>${product.fields.description}</p>
+                                <h5>Rating:</h5>
+                                <p>${product.fields.rating}</p>
+                                <h5>Reviews:</h5>
+                                <p>${product.fields.reviews}</p>
+                                <div>
+                                    <button class="btn btn-danger" onclick = "deleteItem(${product.pk})">Delete</button>
+                                    <button class="btn btn-success" onclick = "addItem(${product.pk})">+</button>
+                                    <button class="btn btn-warning" onclick = "subtractItem(${product.pk})">-</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `;
             });
+
             document.getElementById("product-cards").innerHTML = htmlString;
         }
 
@@ -143,61 +138,48 @@
             fetch("{% url 'main:add_product_ajax' %}", {
                 method: "POST",
                 body: new FormData(document.querySelector('#form'))
-            }).then(refreshProducts)
+            }).then(refreshProducts).then(getTotalStock)
 
             document.getElementById("form").reset()
             return false
         }
 
-        async function delete_item(id) {
-            fetch(`/delete_item/${id}`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
-                }
-            })
-            .then(refreshProducts);
+        async function deleteItem(pk) {
+            fetch(`delete_item/${pk}/`, {
+                method: "POST"
+            }).then(refreshProducts).then(getTotalStock)
+
+            return false
         }
 
-        // Function to add one to the product's amount
-        async function add_item(id) {
-            fetch(`/add_item/${id}`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
-                }
-            })
-            .then(refreshProducts);
+        async function addItem(pk) {
+            fetch(`add_item/${pk}/`, {
+                method: "POST"
+            }).then(refreshProducts).then(getTotalStock)
+
+            return false
         }
 
-        // Function to subtract one from the product's amount
-        async function subtract_item(id) {
-            fetch(`/subtract_item/${id}`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": getCookie("csrftoken") // Add the CSRF token
-                }
-            })
-            .then(refreshProducts);
+        async function subtractItem(pk) {
+            fetch(`subtract_item/${pk}/`, {
+                method: "POST"
+            }).then(refreshProducts).then(getTotalStock)
+
+            return false
         }
 
-        // Helper function to get the CSRF token from cookies
-        async function getCookie(name) {
-            var cookieValue = null;
-            if (document.cookie && document.cookie !== "") {
-                var cookies = document.cookie.split(";");
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = cookies[i].trim();
-                    // Check if this cookie contains the name we're looking for
-                    if (cookie.substring(0, name.length + 1) === name + "=") {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
+        async function getTotalStock() {
+            try {
+                const response = await fetch("{% url 'main:get_total_stock' %}");
+                const data = await response.json();
+                document.getElementById("total_stock").innerHTML = `Total Stock: ${data.total_stock}`;
+            } catch (error) {
+                console.error("Error fetching total stock:", error);
             }
-            return cookieValue;
         }
 
+        // Call the function to get and display the total stock when the page loads
+        getTotalStock();
         document.getElementById("button_add").onclick = addProduct
         refreshProducts();
     </script>

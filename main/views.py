@@ -21,19 +21,22 @@ from django.shortcuts import get_object_or_404, redirect
 def show_main(request):
 
     products = Product.objects.filter(user=request.user)
-    total_stock = products.aggregate(total_stock=Sum('amount'))['total_stock'] or 0
     # Check if 'last_login' exists in request.COOKIES and set a default value if not found
     last_login = request.COOKIES.get('last_login', 'N/A')
     context = {
         'name' : request.user.username,
         'npm' : '2206083073',
         'kelas' : 'PBP B',
-        'total_stock' : total_stock,
         'products' : products,
         'last_login' : last_login,
     }
 
     return render(request, "main.html", context)
+
+def get_total_stock(request):
+    total_stock = Product.objects.filter(user=request.user).aggregate(total_stock=Sum('amount'))['total_stock'] or 0
+    return JsonResponse({'total_stock': total_stock})
+
 
 def get_product_json(request):
     product_item = Product.objects.filter(user=request.user)
@@ -57,19 +60,6 @@ def add_product_ajax(request):
     
     return HttpResponseNotFound()
 
-
-def create_product(request):
-    form = ProductForm(request.POST or None)
-
-    if form.is_valid() and request.method == "POST":
-        product = form.save(commit=False)
-        product.user = request.user
-        product.save()
-        return HttpResponseRedirect(reverse('main:show_main'))
-
-    context = {'form': form}
-    return render(request, "create_product.html", context)
-
 # Fungsi untuk menambah amount suatu objek sebanyak satu
 @csrf_exempt
 def add_item(request, item_id):
@@ -77,9 +67,7 @@ def add_item(request, item_id):
         item = get_object_or_404(Product, id=item_id)
         item.amount += 1
         item.save()
-        return JsonResponse({"message": "Item added successfully"})
-    else:
-        return HttpResponseBadRequest("Bad request")
+    return HttpResponse
 
 # Fungsi untuk mengurangi jumlah stok suatu objek sebanyak satu
 @csrf_exempt
@@ -89,11 +77,7 @@ def subtract_item(request, item_id):
         if item.amount > 0:
             item.amount -= 1
             item.save()
-            return JsonResponse({"message": "Item subtracted successfully"})
-        else:
-            return HttpResponseBadRequest("Item amount cannot be negative")
-    else:
-        return HttpResponseBadRequest("Bad request")
+    return HttpResponse
 
 # Fungsi untuk menghapus suatu objek dari inventori
 @csrf_exempt
@@ -101,9 +85,7 @@ def delete_item(request, item_id):
     if request.method == 'POST':
         item = get_object_or_404(Product, id=item_id)
         item.delete()
-        return JsonResponse({"message": "Item deleted successfully"})
-    else:
-        return HttpResponseBadRequest("Bad request")
+    return HttpResponse
 
 
 def register(request):

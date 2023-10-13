@@ -145,24 +145,33 @@
         }
 
         async function deleteItem(pk) {
+            const headers = new Headers();
+            headers.append('Content-Type', 'application/json');
             fetch(`delete_item/${pk}/`, {
-                method: "POST"
+                method: "POST",
+                header: headers
             }).then(refreshProducts).then(getTotalStock)
 
             return false
         }
 
         async function addItem(pk) {
+            const headers = new Headers();
+            headers.append('Content-Type', 'application/json');
             fetch(`add_item/${pk}/`, {
-                method: "POST"
+                method: "POST",
+                header: headers
             }).then(refreshProducts).then(getTotalStock)
 
             return false
         }
 
         async function subtractItem(pk) {
+            const headers = new Headers();
+            headers.append('Content-Type', 'application/json');
             fetch(`subtract_item/${pk}/`, {
-                method: "POST"
+                method: "POST",
+                header: headers
             }).then(refreshProducts).then(getTotalStock)
 
             return false

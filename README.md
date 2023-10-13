@@ -1,4 +1,7 @@
 <h3>README TUGAS 6</h3>
+
+Tautan Deployment = http://neva-denstia-tugas.pbp.cs.ui.ac.id
+
 **Pertanyaan**
 
 **1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**
@@ -41,7 +44,7 @@
 
 **5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 
-STEP 1: AJAX GET
+	**STEP 1: AJAX GET**
 	- Buka views.py tambahkan get_product_json seperti di tutorial.
 	- Edit urls.py tambahkan get-product yang memanggil fungsi get_product_json
 	- Buka main.html cari bagian cardsnya (diatas for loop products) berikan id = "product-cards" untuk fungsi async nya nanti. Copy yang didalam div tersebut dan amankan.
@@ -51,7 +54,7 @@ STEP 1: AJAX GET
 	- Buat loop products dengan for each. Di dalam loop tambahkan htmlString tadi dengan paste isi div id "product-cards" diatas tadi.
 	- Ubah pemanggilan productnya dengan product.fields.(nama model) yang ingin diambil.
 
-STEP 2: AJAX POST
+	**STEP 2: AJAX POST**
 	- Buat fungsi add_product_ajax pada views.py dan tambahkan path /create-ajax/ yang memanggil fungsi tersebut seperti di tutorial
 	- Ubah reques.POST.get pada add_product_ajax sesuai dengan model pada models.py
 	- Buat modal seperti di tutorial
@@ -64,7 +67,8 @@ STEP 2: AJAX POST
 	- Ubah heading yang awalnya mengisi total_stock dikosongkan dan berikan id="total_stock"
 	- Buat async function baru di <script> getTotalStock yang fetch path get_total_stock lalu merubah id "total_stock" dengan getElementById sehingga innerHTMLnya dengan total_stock terupdate. Tambahkan getTotalStock() di bawah <script> dan juga tambahkan .then(getTotalStock) disebelah setiap .then(refreshProducts).
 
-STEP 3: run perintah collectstatic
+	**STEP 3: run perintah collectstatic**
+
 	pastikan pada settings.py ada hal berikut:
 	STATIC_URL = '/static/'
 	STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -152,7 +156,7 @@ HTML5 memperkenalkan beberapa tag baru yang memiliki peran khusus dalam membangu
 	Jadi, jika produk saat ini adalah produk terakhir dalam loop, maka elemen div ini akan memiliki kelas "product-box last-row". Ini mungkin digunakan untuk memberikan tampilan yang berbeda atau gaya tambahan pada produk terakhir dalam daftar produk, seperti mengganti warna latar belakangnya atau mengatur margin bawah tambahan untuk memisahkan produk terakhir dari produk sebelumnya dalam tampilan halaman.
 
 ###############################################################################################################################################################################################
-<h3>**README TUGAS 4**</h3>
+<h3>README TUGAS 4</h3>
 
 **Pertanyaan**
 **1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
@@ -190,7 +194,7 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara default. Cook
 
 
 ########################################################
-<h3>**README TUGAS 3**</h3>
+<h3>README TUGAS 3</h3>
 
 **Pertanyaan**
 **1. Apa perbedaan antara form POST dan form GET dalam Django?**
@@ -258,7 +262,7 @@ Step 3: Membuat routing URL untuk masing-masing views yang telah ditambahkan pad
 
 ########################################################################################################
 
-<h3>**README TUGAS 2**</h3>
+<h3>README TUGAS 2</h3>
 
 Tautan aplikasi Adaptable 	: https://tugas2.adaptable.app/
 Tautan Repositori GitHub 	: https://github.com/nevadenstia/Tugas2.git
